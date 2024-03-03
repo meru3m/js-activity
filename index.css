@@ -1,0 +1,29 @@
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+.nav-link {
+  font-size: 18px;
+  color: #007bff; /* Button color */
+  transition: color 0.3s;
+}
+.nav-link:hover {
+  color: #0056b3; /* Button hover color */
+}
+.nav-link.btn-outline-info {
+  border-color: #17a2b8; /* Info color */
+}
+.nav-link.btn-outline-info:hover {
+  background-color: #17a2b8; /* Info color */
+  color: #fff; /* White text color */
+}
+
+/* Even or Odd */
+
+.calculator-box {
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 20px;
+}
