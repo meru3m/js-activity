@@ -130,11 +130,6 @@ convertButton.addEventListener("click", convertTemperature)
 
 // ===== isMultiple =====
 
-// let checkButton = document.getElementById("check-el")
-
-// checkButton.addEventListener("click", function () {
-//   alert("Clicked!")
-// })
 let isMultipleInput = document.getElementById("isMultipleInput")
 
 function isMultipleChecker() {
@@ -144,6 +139,7 @@ function isMultipleChecker() {
     alert("Please enter a valid number.")
     return
   }
+
   let message = ""
 
   if (number % 3 === 0 && number % 5 === 0) {
@@ -158,7 +154,7 @@ function isMultipleChecker() {
   }
 
   // Display the result
-  isMultipleResult.innerHTML = "<p>" + message + "</p>"
+  isMultipleResult.innerHTML = "<p class='text-success'>" + message + "</p>"
 }
 
 let checkBtn = document.getElementById("check-el")
