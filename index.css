@@ -1,3 +1,7 @@
+body {
+  background: #212529;
+}
+
 .navbar-brand {
   font-size: 24px;
   font-weight: bold;
@@ -8,6 +12,15 @@
   color: #007bff; /* Button color */
   transition: color 0.3s;
 }
+
+.nav-link.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center; /* Optional for additional centering */
+  max-width: fit-content;
+}
+
 .nav-link:hover {
   color: #0056b3; /* Button hover color */
 }
@@ -30,4 +43,10 @@
 
 .mt-6 {
   margin-top: 11rem !important;
+}
+
+.encircle {
+  border: 2px solid red; /* Choose your desired border style */
+  border-radius: 50%; /* This makes the border circular */
+  padding: 2px; /* Adjust padding as needed */
 }

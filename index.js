@@ -159,3 +159,44 @@ function isMultipleChecker() {
 
 let checkBtn = document.getElementById("check-el")
 checkBtn.addEventListener("click", isMultipleChecker)
+
+// Largest Number Finder ==============
+
+// Function to generate random numbers
+function generateRandomNumbers() {
+  let numbers = []
+  let generatedNumbers = {} // Object to keep track of generated numbers
+
+  // Generate unique random numbers
+  while (numbers.length < 10) {
+    let randomNumber = Math.floor(Math.random() * 100) + 1
+    if (!generatedNumbers[randomNumber]) {
+      numbers.push(randomNumber)
+      generatedNumbers[randomNumber] = true
+    }
+  }
+
+  document.getElementById("numbers-container").innerHTML = numbers.join(", ") // Display numbers separated by commas in the container
+}
+
+// Function to find the largest number and encircle it
+function findLargestNumber() {
+  let numbers = document
+    .getElementById("numbers-container")
+    .innerText.split(",")
+    .map(Number) // Extract numbers from the container
+  let largestNumber = Math.max(...numbers) // Find the largest number in the array
+  let container = document.getElementById("numbers-container")
+  container.innerHTML = container.innerHTML.replace(
+    new RegExp(largestNumber, "g"),
+    `<span class="encircle">${largestNumber}</span>`
+  ) // Encircle all occurrences of the largest number
+}
+
+// Event listener for the Generate Random Numbers button
+document
+  .getElementById("generate-el")
+  .addEventListener("click", generateRandomNumbers)
+
+// Event listener for the Find Largest button
+document.getElementById("find-el").addEventListener("click", findLargestNumber)

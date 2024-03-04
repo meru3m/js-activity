@@ -17,34 +17,34 @@
     <nav class="navbar navbar navbar-expand navbar-dark bg-dark fixed-top">
       <div class="container-fluid d-flex flex-column align-items-center">
         <!-- Website Name Centered -->
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand mb-2" href="#">
           <span class="text-info fw-bold display-2">6th Session Activity</span>
         </a>
 
         <!-- Navbar Links -->
-        <div class="d-none d-sm-flex">
+        <div class="d-flex">
           <!-- Hidden on small and medium screens -->
           <!-- Links for Four Apps -->
           <a
-            class="nav-link btn btn-outline-info mx-2 p-1 lead"
+            class="nav-link btn btn-outline-info mx-2 lead container-fluid p-1"
             href="#"
             id="oddEvenLink"
             >Even or Odd</a
           >
           <a
-            class="nav-link btn btn-outline-info mx-2 p-1 lead"
+            class="nav-link btn btn-outline-info mx-2 p-1 lead container-fluid"
             href="#"
             id="converterLink"
             >Converter</a
           >
           <a
-            class="nav-link btn btn-outline-info mx-2 p-1 lead"
+            class="nav-link btn btn-outline-info mx-2 p-1 lead container-fluid"
             href="#"
             id="isMultipleLink"
             >isMultiple</a
           >
           <a
-            class="nav-link btn btn-outline-info mx-2 p-1 lead"
+            class="nav-link btn btn-outline-info mx-2 p-1 lead container-fluid"
             href="#"
             id="largestNumberLink"
             >Largest Number</a
@@ -104,14 +104,22 @@
           >
           <input type="number" class="form-control" id="isMultipleInput" />
         </div>
-        <button class="btn btn-primary" id="check-el" >Check</button>
-        <div id="isMultipleResult" class="mt-3" "></div>
+        <button class="btn btn-primary" id="check-el">Check</button>
+        <div id="isMultipleResult" class="mt-3"></div>
       </div>
 
       <div class="calculator-box d-none" id="largestNumberSection">
-        <!-- Largest Number Section Content -->
-        <h1 class="text-center display-3">Coming Soon</h1>
-        <!-- You can add the Largest Number elements here -->
+        <h1 class="text-center display-3">Find the LARGEST number!</h1>
+        <p class="lead mt-3">Generate array of 10 Random numbers</p>
+        <button class="btn btn-success mb-3" id="generate-el">
+          Generate Random Numbers
+        </button>
+        <div
+          id="numbers-container"
+          class="form-control"
+          style="min-height: 40px"
+        ></div>
+        <button class="btn btn-danger mt-3" id="find-el">Find Largest</button>
       </div>
     </div>
 
