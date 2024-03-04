@@ -27,3 +27,7 @@
   padding: 20px;
   margin-top: 20px;
 }
+
+.mt-6 {
+  margin-top: 11rem !important;
+}

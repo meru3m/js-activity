@@ -14,8 +14,8 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body class="text-secondary">
-    <nav class="navbar navbar-dark bg-dark">
-      <div class="container d-flex flex-column align-items-center">
+    <nav class="navbar navbar navbar-expand navbar-dark bg-dark fixed-top">
+      <div class="container-fluid d-flex flex-column align-items-center">
         <!-- Website Name Centered -->
         <a class="navbar-brand" href="#">
           <span class="text-info fw-bold display-2">6th Session Activity</span>
@@ -53,12 +53,12 @@
       </div>
     </nav>
 
-    <div class="container mt-5" id="content">
+    <div class="container mt-6" id="content">
       <div id="oddEvenSection">
-        <div class="calculator-box">
-          <h1 class="text-center">Even or Odd Checker</h1>
+        <div class="calculator-box d-none">
+          <h1 class="text-center display-3">Even or Odd Checker</h1>
           <div class="mb-3">
-            <label for="numberInput" class="form-label"
+            <label for="numberInput" class="form-label lead"
               >Enter any number:</label
             >
             <input type="number" class="form-control" id="numberInput" />
@@ -69,9 +69,11 @@
       </div>
 
       <div class="calculator-box d-none" id="converterSection">
-        <h1 class="text-center">Converter</h1>
+        <h1 class="text-center display-3">Converter</h1>
         <div class="mb-3">
-          <label for="temperatureInput" id="temperatureInputLabel">℃</label>
+          <label for="temperatureInput" id="temperatureInputLabel" class="lead"
+            >℃</label
+          >
           <input type="number" class="form-control" id="temperatureInput" />
         </div>
         <button class="btn btn-primary mb-3" id="toggleUnitButton">⇅</button>
@@ -79,6 +81,7 @@
           <label
             for="convertedTemperatureOutput"
             id="convertedTemperatureOutputLabel"
+            class="lead"
             >℉</label
           >
           <input
@@ -91,15 +94,23 @@
         <button class="btn btn-primary" id="convertButton">Convert</button>
       </div>
 
-      <div class="calculator-box d-none" id="isMultipleSection">
+      <div class="calculator-box" id="isMultipleSection">
         <!-- isMultiple Section Content -->
-        <h1 class="text-center">Coming Soon</h1>
-        <!-- You can add the isMultiple elements here -->
+        <h1 class="text-center display-3">Let's check the number!</h1>
+        <div class="mb-3">
+          <!-- You can add the isMultiple elements here -->
+          <label for="isMultipleLabel" class="form-label lead"
+            >Enter any number:</label
+          >
+          <input type="number" class="form-control" id="isMultipleInput" />
+        </div>
+        <button class="btn btn-primary" id="check-el" >Check</button>
+        <div id="isMultipleResult" class="mt-3" "></div>
       </div>
 
       <div class="calculator-box d-none" id="largestNumberSection">
         <!-- Largest Number Section Content -->
-        <h1 class="text-center">Coming Soon</h1>
+        <h1 class="text-center display-3">Coming Soon</h1>
         <!-- You can add the Largest Number elements here -->
       </div>
     </div>

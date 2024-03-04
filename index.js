@@ -1,19 +1,3 @@
-let checkEl = document.getElementById("checkButton")
-
-function oddEven() {
-  let number = document.getElementById("numberInput").value
-  let resultDiv = document.getElementById("result")
-  if (number % 2 === 0) {
-    resultDiv.innerHTML =
-      "<p class='text-success'>The number " + number + " is even.</p>"
-  } else {
-    resultDiv.innerHTML =
-      "<p class='text-danger'>The number " + number + " is odd.</p>"
-  }
-}
-
-checkEl.addEventListener("click", oddEven)
-
 // Get elements
 let oddEvenLink = document.getElementById("oddEvenLink")
 let converterLink = document.getElementById("converterLink")
@@ -86,8 +70,9 @@ function oddEven() {
   }
 }
 
+let checkEl = document.getElementById("checkButton")
 // Event listener for Check button
-document.getElementById("checkButton").addEventListener("click", oddEven)
+checkEl.addEventListener("click", oddEven)
 
 // ===== CONVERT ======
 let toggleUnitButton = document.getElementById("toggleUnitButton")
@@ -142,3 +127,39 @@ function convertTemperature() {
 
 // Event listener for Convert button
 convertButton.addEventListener("click", convertTemperature)
+
+// ===== isMultiple =====
+
+// let checkButton = document.getElementById("check-el")
+
+// checkButton.addEventListener("click", function () {
+//   alert("Clicked!")
+// })
+let isMultipleInput = document.getElementById("isMultipleInput")
+
+function isMultipleChecker() {
+  let number = parseFloat(isMultipleInput.value)
+
+  if (isNaN(number)) {
+    alert("Please enter a valid number.")
+    return
+  }
+  let message = ""
+
+  if (number % 3 === 0 && number % 5 === 0) {
+    message = "The number is divisible by both 3 and 5."
+  } else if (number % 3 === 0) {
+    message = "The number is divisible by 3."
+  } else if (number % 5 === 0) {
+    message = "The number is divisible by 5."
+  } else {
+    alert("The number is not divisible by either 3 or 5.")
+    return
+  }
+
+  // Display the result
+  isMultipleResult.innerHTML = "<p>" + message + "</p>"
+}
+
+let checkBtn = document.getElementById("check-el")
+checkBtn.addEventListener("click", isMultipleChecker)
