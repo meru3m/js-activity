@@ -70,8 +70,18 @@ function oddEven() {
   }
 }
 
-let checkEl = document.getElementById("checkButton")
+numberInput.addEventListener("keypress", function (event) {
+  // Check if the pressed key is Enter
+  if (event.key === " " || event.key === "Enter") {
+    // Prevent the default behavior of form submission
+    event.preventDefault()
+    // Call the oddEven function
+    oddEven()
+  }
+})
+
 // Event listener for Check button
+let checkEl = document.getElementById("checkButton")
 checkEl.addEventListener("click", oddEven)
 
 // ===== CONVERT ======
@@ -127,6 +137,15 @@ function convertTemperature() {
 
 // Event listener for Convert button
 convertButton.addEventListener("click", convertTemperature)
+temperatureInput.addEventListener("keypress", function (event) {
+  // Check if the pressed key is Enter
+  if (event.key === " " || event.key === "Enter") {
+    // Prevent the default behavior of form submission
+    event.preventDefault()
+    // Call the oddEven function
+    convertTemperature()
+  }
+})
 
 // ===== isMultiple =====
 
@@ -159,6 +178,15 @@ function isMultipleChecker() {
 
 let checkBtn = document.getElementById("check-el")
 checkBtn.addEventListener("click", isMultipleChecker)
+isMultipleInput.addEventListener("keypress", function (event) {
+  // Check if the pressed key is Enter
+  if (event.key === " " || event.key === "Enter") {
+    // Prevent the default behavior of form submission
+    event.preventDefault()
+    // Call the oddEven function
+    isMultipleChecker()
+  }
+})
 
 // Largest Number Finder ==============
 
@@ -194,9 +222,20 @@ function findLargestNumber() {
 }
 
 // Event listener for the Generate Random Numbers button
-document
-  .getElementById("generate-el")
-  .addEventListener("click", generateRandomNumbers)
+document.getElementById("generate-el").addEventListener("click", function () {
+  generateRandomNumbers() // Call the generateRandomNumbers function
+  this.blur() // Remove focus from the button
+})
 
 // Event listener for the Find Largest button
 document.getElementById("find-el").addEventListener("click", findLargestNumber)
+
+document.addEventListener("keypress", function (event) {
+  if (
+    (event.key === "Enter" || event.key === " ") &&
+    document.activeElement.tagName !== "BUTTON"
+  ) {
+    event.preventDefault() // Prevent the default action of the keypress event
+    findLargestNumber() // Call the findLargestNumber function
+  }
+})
